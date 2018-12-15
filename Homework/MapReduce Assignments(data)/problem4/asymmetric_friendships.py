@@ -18,5 +18,5 @@ def reducer(person, list_of_friends):
     mr.emit((person, friend))
 
 if __name__ == '__main__':
-  inputdata = open(sys.argv[1])
+  inputdata = open("friends.json")
   mr.execute(inputdata, mapper, reducer)

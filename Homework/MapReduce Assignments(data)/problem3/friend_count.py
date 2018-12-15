@@ -1,4 +1,4 @@
-import MapReduce, sys
+import MapReduce, sys, json
 
 mr = MapReduce.MapReduce()
 
@@ -13,5 +13,5 @@ def reducer(name, list_of_values):
   mr.emit((name, total))
 
 if __name__ == '__main__':
-  inputdata = open(sys.argv[1])
+  inputdata = open("friends.json")
   mr.execute(inputdata, mapper, reducer)
